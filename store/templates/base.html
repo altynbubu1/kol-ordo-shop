@@ -93,33 +93,33 @@ color:black
        <ul class="navbar-nav ml-auto my-2 my-lg-0">
         <form class="form-inline my-2 my-lg-0" action="/search">
           <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search for any product" />
+            <input type="text" name="q" class="form-control" placeholder="Что ищете?" />
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="submit">Search</button>
+              <button class="btn btn-outline-secondary" type="submit">Поиск</button>
             </div>
           </div>
           
         </form>
            {% if request.session.customer %}
            <li class="nav-item">
-               <a class="nav-link" href="/orders">Orders</a>
+               <a class="nav-link" href="/orders">Заказы</a>
            </li>
            <li class="nav-item">
-               <a class="nav-link" href="/cart">Cart
+               <a class="nav-link" href="/cart"> Корзина
                    <span class="badge badge-dark">{{request.session.cart.keys|length}}</span>
                    <span class="sr-only">(current)</span>
                </a>
 
            </li>
            <li class="nav-item ">
-               <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+               <a class="nav-link" href="/logout">Выйти<span class="sr-only">(current)</span></a>
            </li>
            {% else %}
            <li class="nav-item">
-               <a class="nav-link" href="/cart">Cart</a>
+               <a class="nav-link" href="/cart"> Корзина</a>
            </li>
            <li class="nav-item">
-               <a class="nav-link" href="/signup">Signup</a>
+               <a class="nav-link" href="/signup">Регистрация</a>
            </li>
            <li class="nav-item">
                <a class="nav-link disabled" href="/login">Login</a>
@@ -146,8 +146,8 @@ color:black
 	  <div class="row">
 		<div class="col-md-12 col-sm-12">
 		  <div style="color:#ffffff;" class="wow fadeInUp footer-copyright">
-			<p>Shopify : An Ecommerce site to cater to all your fashion needs!<br>
-			  &copy; 2022 Developed By Mrunmayee Jakate and Prajna Puthran </p>
+			<p> Кол Ордо — онлайн-магазин уникальных вещей.
+                Только новое. Только особенное. Только для вас. </p>
 		  </div>
 		</div>
 	  </div>
