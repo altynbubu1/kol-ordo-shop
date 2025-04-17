@@ -23,3 +23,10 @@ class Product(models.Model):
             return Product.objects.filter(category = category_id)
         else:
             return Product.get_all_products();
+
+class History(models.Model):
+    title = models.CharField(max_length=50)
+    image = models.ImageField(upload_to="image/")
+    description = models.TextField(max_length=2000)
+    def __str__(self):
+        return self.title

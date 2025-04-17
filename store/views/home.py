@@ -1,10 +1,9 @@
 from django.shortcuts import render , redirect , HttpResponseRedirect
-from store.models.product import Product
+from store.models.product import Product, History
 from store.models.category import Category
 from django.views import View
 
 
-# Create your views here.
 class Index(View):
 
     def post(self , request):
@@ -49,12 +48,19 @@ def store(request):
         products = Product.get_all_products_by_categoryid(categoryID)
     else:
         products = Product.get_all_products();
-
+    histories = History.objects.all()
     data = {}
     data['products'] = products
     data['categories'] = categories
+    data['histories'] = histories
 
     print('you are : ', request.session.get('email'))
     return render(request, 'index.html', data)
 
 
+def history(request):
+    histories = History.objects.all()
+    context = {
+        "histories": histories
+    }
+    return render(request, 'history.html', context)
